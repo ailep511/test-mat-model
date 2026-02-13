@@ -4,6 +4,6 @@
   "capability": "Threat detection",
   "recommendation": "Audit API calls",
   "aws_service": "AWS CloudTrail",
-  "guidance": "",
-  "how_to_check": ""
+  "guidance": "- Is AWS CloudTrail enabled in all regions, including global service events, across all accounts in your organization ?\n- Are CloudTrail logs being stored in a dedicated S3 bucket with log file validation enabled to detect tampering ?\n- Is access to the CloudTrail logging bucket restricted so that even administrators cannot delete or modify log files (e.g.: using S3 Object Lock or an SCP) ?",
+  "how_to_check": "[CloudTrail.1] AWS CloudTrail should be enabled and configured with at least one multi-region trail | [CloudTrail.2] CloudTrail should have encryption at rest enabled | Verify in the CloudTrail console that a trail is active in all regions, that log file validation is enabled, and that the destination S3 bucket is protected against deletion"
 }
