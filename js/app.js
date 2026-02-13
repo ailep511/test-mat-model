@@ -145,7 +145,7 @@ function renderCards() {
     return CAPABILITIES.indexOf(capA) - CAPABILITIES.indexOf(capB);
   });
 
-  // ── DocumentFragment: un solo repaint al final ──
+  container.innerHTML = '';
   const fragment = document.createDocumentFragment();
 
   sortedKeys.forEach(key => {
@@ -211,8 +211,6 @@ function renderCards() {
     });
   });
 
-  // Un solo repaint: vaciar + insertar todo junto
-  container.innerHTML = '';
   container.appendChild(fragment);
 }
 
