@@ -8,7 +8,7 @@
   --aws: #FF9900;
   --aws-dim: rgba(255,153,0,0.12);
   --aws-glow: rgba(255,153,0,0.25);
-  --text-primary: #e8eef8;
+  --text-primary: #7a9cc4;
   --text-secondary: #7a9cc4;
   --text-dim: #3d5a7e;
   --green: #00d97e;
@@ -414,6 +414,23 @@ h1 span { color: var(--aws); }
   width: 160px;
 }
 .filter-search input::placeholder { color: var(--text-dim); }
+
+/* BUTTON EXPAND EXPLAIN */
+.rec-expand-btn::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+  margin-bottom: 3px;
+}
+.rec-expand-btn.open::after {
+  transform: rotate(-135deg);
+  margin-bottom: -3px;
+}
 
 /* RECOMMENDATION CARDS */
 .cards-container {
