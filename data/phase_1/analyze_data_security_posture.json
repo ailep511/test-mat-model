@@ -4,6 +4,6 @@
   "capability": "Data protection",
   "recommendation": "Analyze data security posture",
   "aws_service": "Amazon Macie",
-  "guidance": "",
-  "how_to_check": ""
+  "guidance": "- Is Amazon Macie enabled and running discovery jobs across all S3 buckets in your account ?\n- Have you reviewed Macie findings to identify buckets containing sensitive data (e.g.: PII, credentials, financial data) that are publicly accessible or lack encryption ?\n- Are Macie findings being reviewed regularly and actioned, rather than left unaddressed ?",
+  "how_to_check": "[Macie.1] Amazon Macie should be enabled | Review the Macie console to confirm automated sensitive data discovery is active and check the Findings section for any unresolved sensitive data exposures across your S3 inventory"
 }
