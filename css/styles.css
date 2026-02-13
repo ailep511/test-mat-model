@@ -419,8 +419,8 @@ h1 span { color: var(--aws); }
 .rec-expand-btn::after {
   content: '';
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  width: 11px;
+  height: 11px;
   border-right: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
   transform: rotate(45deg);
@@ -576,14 +576,14 @@ h1 span { color: var(--aws); }
 .rec-expand-btn {
   background: none;
   border: none;
-  color: var(--text-dim);
+  color: var(--aws);
   cursor: pointer;
   padding: 2px;
   flex-shrink: 0;
   transition: color 0.2s, transform 0.2s;
   margin-top: 1px;
 }
-.rec-expand-btn:hover { color: var(--text-primary); }
+.rec-expand-btn:hover { color: #FC7619; }
 
 .rec-detail {
   display: none;
