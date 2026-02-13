@@ -4,6 +4,6 @@
   "capability": "Security governance",
   "recommendation": "Select the region(s) to use and block the rest",
   "aws_service": "AWS Organizations - AWS Control Tower",
-  "guidance": "",
-  "how_to_check": ""
+  "guidance": "- Have you identified the AWS regions your organization is authorized to use and documented them as part of your security policy?\n- Is there an SCP (Service Control Policy) in place at the Organizations level to deny the creation of resources in unauthorized regions?\n- If using AWS Control Tower, is the Region Deny guardrail enabled to ensure that even newly created accounts inherit the region restriction automatically?",
+  "how_to_check": "[Organizations] Verify that an SCP with a region-based deny condition (aws:RequestedRegion) is attached at the root or OU level in AWS Organizations | If using Control Tower, confirm that the 'Disallow Changes to Region Configuration' and region deny guardrails are enabled and applied to all enrolled accounts"
 }
