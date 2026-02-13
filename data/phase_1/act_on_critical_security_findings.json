@@ -4,6 +4,6 @@
   "capability": "Incident response",
   "recommendation": "Act on Critical Security Findings",
   "aws_service": "AWS Security Hub",
-  "guidance": "",
-  "how_to_check": ""
+  "guidance": "- Are CRITICAL and HIGH severity findings in AWS Security Hub being actively reviewed and triaged ?\n- Do you have a defined SLA for remediating critical findings (e.g.: CRITICAL within 24h, HIGH within 7 days) ?\n- Are findings assigned to a specific owner or team to ensure accountability and follow-through ?",
+  "how_to_check": "[Security Hub.1] Security Hub should be enabled for an AWS account | Review the Security Hub Findings console filtered by severity (CRITICAL, HIGH) and verify that open findings have assignees, notes, or workflow status updates indicating active remediation"
 }
