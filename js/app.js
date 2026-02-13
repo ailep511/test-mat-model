@@ -136,8 +136,6 @@ function renderCards() {
     groups[key].push(item);
   });
 
-  container.innerHTML = '';
-
   // Sort by phase then capability
   const sortedKeys = Object.keys(groups).sort((a, b) => {
     const [capA, phA] = a.split('|||');
@@ -146,6 +144,9 @@ function renderCards() {
     if (phDiff !== 0) return phDiff;
     return CAPABILITIES.indexOf(capA) - CAPABILITIES.indexOf(capB);
   });
+
+  // ── DocumentFragment: un solo repaint al final ──
+  const fragment = document.createDocumentFragment();
 
   sortedKeys.forEach(key => {
     const [cap, phase] = key.split('|||');
@@ -160,7 +161,7 @@ function renderCards() {
       <span class="cap-group-name">${cap}</span>
       <span class="cap-group-phase-badge phase-tag-${phIdx}">${PHASE_SHORT[phIdx]}</span>
     `;
-    container.appendChild(header);
+    fragment.appendChild(header);
 
     items.forEach(item => {
       const card = document.createElement('div');
@@ -202,13 +203,17 @@ function renderCards() {
 
       // Restore select value
       if (currentScore !== undefined) {
-        const sel = document.getElementById(`sel-${item.id}`);
+        const sel = card.querySelector(`#sel-${item.id}`);
         if (sel) sel.value = currentScore === 'na' ? 'na' : (currentScore ?? '');
       }
 
-      container.appendChild(card);
+      fragment.appendChild(card);
     });
   });
+
+  // Un solo repaint: vaciar + insertar todo junto
+  container.innerHTML = '';
+  container.appendChild(fragment);
 }
 
 function getScoreClass(id) {
@@ -448,7 +453,12 @@ function filterByCap(cap) {
   renderCards();
 }
 
-function applyFilters() { renderCards(); }
+// ── Debounce para el input de búsqueda ──
+let renderDebounceTimer = null;
+function applyFilters() {
+  clearTimeout(renderDebounceTimer);
+  renderDebounceTimer = setTimeout(() => renderCards(), 120);
+}
 
 function resetAll() {
   openModal();
