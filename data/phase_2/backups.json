@@ -1,0 +1,9 @@
+{
+  "id": "2.7.2",
+  "phase": "Phase 2: Foundational",
+  "capability": "Data protection",
+  "recommendation": "Backups",
+  "aws_service": "AWS Backups",
+  "guidance": "",
+  "how_to_check": ""
+}

@@ -1,0 +1,9 @@
+{
+  "id": "2.10.1",
+  "phase": "Phase 2: Foundational",
+  "capability": "Resiliency",
+  "recommendation": "Redundancy using multiple Availability Zones",
+  "aws_service": "N/A",
+  "guidance": "",
+  "how_to_check": ""
+}

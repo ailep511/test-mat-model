@@ -1,0 +1,9 @@
+{
+  "id": "4.6.2",
+  "phase": "Phase 4: Optimized",
+  "capability": "Infrastructure protection",
+  "recommendation": "Use abstract services",
+  "aws_service": "Lambda / Fargate",
+  "guidance": "",
+  "how_to_check": ""
+}

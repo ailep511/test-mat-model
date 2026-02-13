@@ -1,0 +1,9 @@
+{
+  "id": "1.9.1",
+  "phase": "Phase 1: Quick Wins",
+  "capability": "Incident response",
+  "recommendation": "Act on Critical Security Findings",
+  "aws_service": "AWS Security Hub",
+  "guidance": "",
+  "how_to_check": ""
+}

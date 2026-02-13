@@ -1,0 +1,9 @@
+{
+  "id": "3.3.2",
+  "phase": "Phase 3: Efficient",
+  "capability": "Identity & access management",
+  "recommendation": "Customer IAM: security of your customers",
+  "aws_service": "Amazon Cognito",
+  "guidance": "",
+  "how_to_check": ""
+}

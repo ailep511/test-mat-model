@@ -1,0 +1,9 @@
+{
+  "id": "3.3.1",
+  "phase": "Phase 3: Efficient",
+  "capability": "Identity & access management",
+  "recommendation": "Least Privilege Review",
+  "aws_service": "IAM Access Analyzer",
+  "guidance": "",
+  "how_to_check": ""
+}

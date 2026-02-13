@@ -1,0 +1,9 @@
+{
+  "id": "3.8.3",
+  "phase": "Phase 3: Efficient",
+  "capability": "Application security",
+  "recommendation": "Advanced DDoS Mitigation (L7)",
+  "aws_service": "AWS Shield",
+  "guidance": "",
+  "how_to_check": ""
+}

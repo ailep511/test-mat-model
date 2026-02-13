@@ -1,0 +1,9 @@
+{
+  "id": "4.3.1",
+  "phase": "Phase 4: Optimized",
+  "capability": "Identity & access management",
+  "recommendation": "IAM Data Perimeters",
+  "aws_service": "AWS IAM",
+  "guidance": "",
+  "how_to_check": ""
+}

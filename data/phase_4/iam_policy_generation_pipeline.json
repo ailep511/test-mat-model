@@ -1,0 +1,9 @@
+{
+  "id": "4.3.2",
+  "phase": "Phase 4: Optimized",
+  "capability": "Identity & access management",
+  "recommendation": "IAM Policy Generation Pipeline",
+  "aws_service": "IAM Access Analyzer",
+  "guidance": "",
+  "how_to_check": ""
+}

@@ -1,0 +1,9 @@
+{
+  "id": "3.9.1",
+  "phase": "Phase 3: Efficient",
+  "capability": "Incident response",
+  "recommendation": "Run TableTop Exercises - Simulations",
+  "aws_service": "N/A",
+  "guidance": "",
+  "how_to_check": ""
+}

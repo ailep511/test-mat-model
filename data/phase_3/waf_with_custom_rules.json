@@ -1,0 +1,9 @@
+{
+  "id": "3.8.2",
+  "phase": "Phase 3: Efficient",
+  "capability": "Application security",
+  "recommendation": "WAF with custom rules",
+  "aws_service": "AWS WAF",
+  "guidance": "",
+  "how_to_check": ""
+}

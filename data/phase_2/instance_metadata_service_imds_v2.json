@@ -1,0 +1,9 @@
+{
+  "id": "2.3.3",
+  "phase": "Phase 2: Foundational",
+  "capability": "Identity & access management",
+  "recommendation": "Instance Metadata Service (IMDS) v2",
+  "aws_service": "EC2 IMDS",
+  "guidance": "",
+  "how_to_check": ""
+}

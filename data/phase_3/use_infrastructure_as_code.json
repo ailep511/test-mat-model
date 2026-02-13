@@ -1,0 +1,9 @@
+{
+  "id": "3.1.2",
+  "phase": "Phase 3: Efficient",
+  "capability": "Security governance",
+  "recommendation": "Use infrastructure as code",
+  "aws_service": "CloudFormation",
+  "guidance": "",
+  "how_to_check": ""
+}

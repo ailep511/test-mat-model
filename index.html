@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maturity Model Assessment Tools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loadingScreen" style="
+  position:fixed;inset:0;z-index:9999;
+  background:#070c1a;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:20px;
+  font-family:'Roboto',sans-serif;
+">
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" style="animation:spin 1.2s linear infinite">
+    <circle cx="24" cy="24" r="20" stroke="#1e3050" stroke-width="4"/>
+    <path d="M24 4a20 20 0 0 1 20 20" stroke="#FF9900" stroke-width="4" stroke-linecap="round"/>
+  </svg>
+  <div style="color:#7a9cc4;font-size:13px;letter-spacing:0.05em">Loading assessment data...</div>
+  <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+</div>
+
+<header>
+  <div class="header-brand">
+    <div class="brand-icon">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M10 2L3 6v8l7 4 7-4V6L10 2z" stroke="#FF9900" stroke-width="1.5" fill="rgba(255,153,0,0.2)"/>
+        <path d="M10 7L6.5 9v4l3.5 2 3.5-2V9L10 7z" fill="#FF9900"/>
+      </svg>
+    </div>
+    <div class="brand-text">
+      <span class="brand-label">AWS Security</span>
+      <span class="brand-title">Maturity Model Assessment</span>
+    </div>
+  </div>
+  <div class="header-actions">
+    <button class="btn-outline" onclick="resetAll()">Reset All</button>
+    <button class="btn-outline" onclick="exportCSV()">Export CSV</button>
+    <button class="btn-primary" onclick="openPrintPreview()">
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" style="display:inline;vertical-align:middle;margin-right:5px"><rect x="2" y="4" width="9" height="6" rx="1" stroke="#000" stroke-width="1.3" fill="none"/><path d="M4 4V2.5a.5.5 0 01.5-.5h4a.5.5 0 01.5.5V4" stroke="#000" stroke-width="1.3"/><rect x="4" y="7" width="5" height="2" rx=".4" fill="#000"/></svg>
+      Print Report
+    </button>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Security Self-Assessment Tool</div>
+    <h1>Maturity Model <span>Assessment</span> Tools</h1>
+    <p class="hero-sub">This tool allows you to perform security self-assessments or security journeys, with guidance from <strong style="color:var(--text-primary)">AWS Solutions Architects</strong>. Evaluate your security posture across 10 capability areas and 4 maturity phases.</p>
+  </div>
+</div>
+
+<div class="phase-stats" id="phaseStats">
+  <div class="phase-stat active" data-phase="0" onclick="filterPhase(0)">
+    <div class="stat-label">Phase 1</div>
+    <div class="stat-name">Quick Wins</div>
+    <div class="stat-bar-track"><div class="stat-bar-fill" id="bar-p0" style="width:0%"></div></div>
+    <div class="stat-pct" id="pct-p0">0%</div>
+    <div class="stat-count" id="cnt-p0">16 items</div>
+  </div>
+  <div class="phase-stat" data-phase="1" onclick="filterPhase(1)">
+    <div class="stat-label">Phase 2</div>
+    <div class="stat-name">Foundational</div>
+    <div class="stat-bar-track"><div class="stat-bar-fill" id="bar-p1" style="width:0%"></div></div>
+    <div class="stat-pct" id="pct-p1">0%</div>
+    <div class="stat-count" id="cnt-p1">20 items</div>
+  </div>
+  <div class="phase-stat" data-phase="2" onclick="filterPhase(2)">
+    <div class="stat-label">Phase 3</div>
+    <div class="stat-name">Efficient</div>
+    <div class="stat-bar-track"><div class="stat-bar-fill" id="bar-p2" style="width:0%"></div></div>
+    <div class="stat-pct" id="pct-p2">0%</div>
+    <div class="stat-count" id="cnt-p2">20 items</div>
+  </div>
+  <div class="phase-stat" data-phase="3" onclick="filterPhase(3)">
+    <div class="stat-label">Phase 4</div>
+    <div class="stat-name">Optimized</div>
+    <div class="stat-bar-track"><div class="stat-bar-fill" id="bar-p3" style="width:0%"></div></div>
+    <div class="stat-pct" id="pct-p3">0%</div>
+    <div class="stat-count" id="cnt-p3">18 items</div>
+  </div>
+</div>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Filter by Phase</div>
+      <div class="phase-pills">
+        <div class="phase-pill active-p0" data-p="all" onclick="filterByPhase('all', this)">All</div>
+        <div class="phase-pill" data-p="0" onclick="filterByPhase('0', this)">Phase 1</div>
+        <div class="phase-pill" data-p="1" onclick="filterByPhase('1', this)">Phase 2</div>
+        <div class="phase-pill" data-p="2" onclick="filterByPhase('2', this)">Phase 3</div>
+        <div class="phase-pill" data-p="unassessed" onclick="filterByPhase('unassessed', this)">Not assessed</div>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Capabilities</div>
+      <div id="capNav"></div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content" id="mainContent">
+    <div class="content-toolbar">
+      <div>
+        <span class="toolbar-title">Assessment Items</span>
+        <span class="toolbar-badge" id="itemCountBadge">74 items</span>
+      </div>
+      <div class="filter-search">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="5" cy="5" r="4" stroke="#3d5a7e" stroke-width="1.5"/><path d="M8.5 8.5l2 2" stroke="#3d5a7e" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <input type="text" placeholder="Search recommendations..." id="searchInput" oninput="applyFilters()">
+      </div>
+    </div>
+    <div class="cards-container" id="cardsContainer"></div>
+    <div class="no-results" id="noResults">No items match your filters.</div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
+    <div class="panel-section">
+      <div class="panel-title">Overall Score</div>
+      <div class="overall-score-ring">
+        <svg class="score-ring-svg" width="120" height="120" viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="50" fill="none" stroke="#1e3050" stroke-width="9"/>
+          <circle id="scoreRing" cx="60" cy="60" r="50" fill="none"
+            stroke="#FF9900" stroke-width="9" stroke-linecap="round"
+            stroke-dasharray="314.2" stroke-dashoffset="314.2"
+            transform="rotate(-90 60 60)"
+            style="transition: stroke-dashoffset 0.7s ease;"/>
+          <text x="60" y="65" text-anchor="middle" font-size="22" font-weight="900" fill="#e8eef8" font-family="Roboto,sans-serif" id="scoreRingText">0%</text>
+        </svg>
+        <div class="score-ring-label" id="scoreLabel">No assessments yet</div>
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <div class="panel-title">Phase Progress</div>
+      <div class="progress-overview">
+        <div class="progress-phase-row">
+          <span class="progress-phase-label p0-color" style="font-size:9px;font-family:'Roboto Mono'">P1</span>
+          <div class="progress-track"><div class="progress-fill p0-fill" id="rbar-p0" style="width:0%"></div></div>
+          <span class="progress-pct p0-color" id="rpct-p0">0%</span>
+        </div>
+        <div class="progress-phase-row">
+          <span class="progress-phase-label p1-color" style="font-size:9px;font-family:'Roboto Mono'">P2</span>
+          <div class="progress-track"><div class="progress-fill p1-fill" id="rbar-p1" style="width:0%"></div></div>
+          <span class="progress-pct p1-color" id="rpct-p1">0%</span>
+        </div>
+        <div class="progress-phase-row">
+          <span class="progress-phase-label p2-color" style="font-size:9px;font-family:'Roboto Mono'">P3</span>
+          <div class="progress-track"><div class="progress-fill p2-fill" id="rbar-p2" style="width:0%"></div></div>
+          <span class="progress-pct p2-color" id="rpct-p2">0%</span>
+        </div>
+        <div class="progress-phase-row">
+          <span class="progress-phase-label p3-color" style="font-size:9px;font-family:'Roboto Mono'">P4</span>
+          <div class="progress-track"><div class="progress-fill p3-fill" id="rbar-p3" style="width:0%"></div></div>
+          <span class="progress-pct p3-color" id="rpct-p3">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <div class="panel-title">By Capability</div>
+      <div id="capScoresList"></div>
+    </div>
+
+    <div class="panel-section">
+      <div class="panel-title">Radar Chart</div>
+      <div class="radar-wrap">
+        <svg class="radar" width="220" height="220" viewBox="0 0 220 220" id="radarSvg"></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="printArea"></div>
+
+<!-- PRINT PREVIEW MODAL -->
+<div id="printModal">
+  <div class="print-modal-inner">
+
+    <div class="print-modal-header">
+      <div class="print-modal-title">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="5.5" width="12" height="8" rx="1.5" stroke="#FF9900" stroke-width="1.4" fill="none"/><path d="M5.5 5.5V3.5a1 1 0 011-1h5a1 1 0 011 1v2" stroke="#FF9900" stroke-width="1.4"/><rect x="6" y="9.5" width="6" height="2.5" rx=".5" fill="#FF9900"/><circle cx="4.5" cy="8" r=".8" fill="#FF9900"/></svg>
+        Print Report Preview
+        <span style="font-weight:400;color:var(--text-secondary);font-size:12px;">— configure your output below</span>
+      </div>
+      <button class="print-modal-close" onclick="closePrintModal()">✕</button>
+    </div>
+
+    <div class="print-modal-body">
+
+      <!-- LEFT: OPTIONS -->
+      <div class="print-options-panel">
+
+        <div class="print-opt-section">
+          <div class="print-opt-heading">Color Mode</div>
+          <label class="print-radio-row">
+            <input type="radio" name="printColor" value="color" checked onchange="refreshPreview()">
+            <span class="print-radio-label">🎨 Full color</span>
+          </label>
+          <label class="print-radio-row">
+            <input type="radio" name="printColor" value="bw" onchange="refreshPreview()">
+            <span class="print-radio-label">⬛ Black &amp; white</span>
+          </label>
+        </div>
+
+        <div class="print-opt-section">
+          <div class="print-opt-heading">Output Format</div>
+          <label class="print-radio-row">
+            <input type="radio" name="printFormat" value="table" checked onchange="refreshPreview()">
+            <span class="print-radio-label">Compact table</span>
+          </label>
+          <label class="print-radio-row">
+            <input type="radio" name="printFormat" value="cards" onchange="refreshPreview()">
+            <span class="print-radio-label">Detailed cards</span>
+          </label>
+        </div>
+
+        <div class="print-opt-section">
+          <div class="print-opt-heading">Items to Include</div>
+          <label class="print-radio-row">
+            <input type="radio" name="printItems" value="all" checked onchange="refreshPreview()">
+            <span class="print-radio-label">All items</span>
+          </label>
+          <label class="print-radio-row">
+            <input type="radio" name="printItems" value="scored" onchange="refreshPreview()">
+            <span class="print-radio-label">Scored items only</span>
+          </label>
+          <label class="print-radio-row">
+            <input type="radio" name="printItems" value="unscored" onchange="refreshPreview()">
+            <span class="print-radio-label">Unscored items only</span>
+          </label>
+        </div>
+
+        <div class="print-opt-section">
+          <div class="print-opt-heading">Phases
+            <span class="print-sel-all" style="float:right;margin-left:8px" onclick="toggleAllPhases(true)">All</span>
+            <span class="print-sel-all" style="float:right;color:var(--text-dim)" onclick="toggleAllPhases(false)">None</span>
+          </div>
+          <label class="print-checkbox-row"><input type="checkbox" class="phase-chk" value="0" checked onchange="refreshPreview()"><span class="print-checkbox-label">Phase 1 · Quick Wins</span></label>
+          <label class="print-checkbox-row"><input type="checkbox" class="phase-chk" value="1" checked onchange="refreshPreview()"><span class="print-checkbox-label">Phase 2 · Foundational</span></label>
+          <label class="print-checkbox-row"><input type="checkbox" class="phase-chk" value="2" checked onchange="refreshPreview()"><span class="print-checkbox-label">Phase 3 · Efficient</span></label>
+          <label class="print-checkbox-row"><input type="checkbox" class="phase-chk" value="3" checked onchange="refreshPreview()"><span class="print-checkbox-label">Phase 4 · Optimized</span></label>
+        </div>
+
+        <div class="print-opt-section">
+          <div class="print-opt-heading">Capabilities
+            <span class="print-sel-all" style="float:right;margin-left:8px" onclick="toggleAllCaps(true)">All</span>
+            <span class="print-sel-all" style="float:right;color:var(--text-dim)" onclick="toggleAllCaps(false)">None</span>
+          </div>
+          <div id="capCheckboxes"></div>
+        </div>
+
+        <div class="print-opt-section">
+          <div class="print-opt-heading">Include in Output</div>
+          <div class="print-toggle-row">
+            <span class="print-toggle-label">Assessment guidance</span>
+            <label class="toggle-switch"><input type="checkbox" id="tog-guidance" checked onchange="refreshPreview()"><span class="toggle-slider"></span></label>
+          </div>
+          <div class="print-toggle-row">
+            <span class="print-toggle-label">How to check</span>
+            <label class="toggle-switch"><input type="checkbox" id="tog-howto" onchange="refreshPreview()"><span class="toggle-slider"></span></label>
+          </div>
+          <div class="print-toggle-row">
+            <span class="print-toggle-label">Comments / Notes</span>
+            <label class="toggle-switch"><input type="checkbox" id="tog-comments" checked onchange="refreshPreview()"><span class="toggle-slider"></span></label>
+          </div>
+          <div class="print-toggle-row">
+            <span class="print-toggle-label">AWS service column</span>
+            <label class="toggle-switch"><input type="checkbox" id="tog-service" checked onchange="refreshPreview()"><span class="toggle-slider"></span></label>
+          </div>
+          <div class="print-toggle-row">
+            <span class="print-toggle-label">Summary scorecard</span>
+            <label class="toggle-switch"><input type="checkbox" id="tog-summary" checked onchange="refreshPreview()"><span class="toggle-slider"></span></label>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: PREVIEW -->
+      <div class="print-preview-panel">
+        <div class="print-preview-toolbar">
+          <span class="print-preview-label">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x=".5" y=".5" width="9" height="9" rx="1" stroke="#3d5a7e"/><line x1="2" y1="3" x2="8" y2="3" stroke="#3d5a7e"/><line x1="2" y1="5" x2="8" y2="5" stroke="#3d5a7e"/><line x1="2" y1="7" x2="5" y2="7" stroke="#3d5a7e"/></svg>
+            Live Preview
+          </span>
+          <span class="print-preview-count" id="previewItemCount">0 items</span>
+        </div>
+        <div class="print-preview-scroll">
+          <div id="previewDoc" class="print-doc"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="print-modal-footer">
+      <span class="print-footer-info">Output will be sent to your <span>system print dialog</span></span>
+      <div class="print-modal-actions">
+        <button class="btn-outline" onclick="closePrintModal()">Cancel</button>
+        <button class="btn-print-exec" onclick="executePrint()">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="5" width="10" height="7" rx="1.2" stroke="#000" stroke-width="1.4" fill="none"/><path d="M4.5 5V3a1 1 0 011-1h3a1 1 0 011 1v2" stroke="#000" stroke-width="1.4"/><rect x="4.5" y="8" width="5" height="2" rx=".5" fill="#000"/><circle cx="3.5" cy="7.5" r=".7" fill="#000"/></svg>
+          Print
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="confirmModal">
+  <div class="modal-box">
+    <div class="modal-icon">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <path d="M11 2L2 19h18L11 2z" stroke="#ff4757" stroke-width="1.8" stroke-linejoin="round" fill="rgba(255,71,87,0.15)"/>
+        <line x1="11" y1="9" x2="11" y2="13.5" stroke="#ff4757" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="11" cy="16" r="0.9" fill="#ff4757"/>
+      </svg>
+    </div>
+    <div class="modal-title">Reset all assessments?</div>
+    <div class="modal-desc">
+      This will permanently delete <strong>all scores, comments and saved session data</strong>. You will start from scratch and this action cannot be undone.
+    </div>
+    <hr class="modal-divider">
+    <div class="modal-actions">
+      <button class="modal-btn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="modal-btn-confirm" onclick="confirmReset()">
+        Yes reset everything
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="savedToast">
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5.5" stroke="#00d97e"/><path d="M3.5 6l2 2 3-3" stroke="#00d97e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  Session saved
+</div>
+
+<footer>
+  Built from <span>AWS Security Maturity Model Assessment Tool v7</span> &nbsp;·&nbsp; Always download the latest version from <span>maturitymodel.security.aws.dev</span>
+</footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

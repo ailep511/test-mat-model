@@ -1,0 +1,9 @@
+{
+  "id": "4.1.2",
+  "phase": "Phase 4: Optimized",
+  "capability": "Security assurance",
+  "recommendation": "Automate Evidence Gathering",
+  "aws_service": "AWS Audit Manager",
+  "guidance": "",
+  "how_to_check": ""
+}

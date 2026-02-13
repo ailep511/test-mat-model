@@ -1,0 +1,9 @@
+{
+  "id": "4.10.2",
+  "phase": "Phase 4: Optimized",
+  "capability": "Resiliency",
+  "recommendation": "Forming a Chaos Engineering team",
+  "aws_service": "Fault Injection Service",
+  "guidance": "",
+  "how_to_check": ""
+}

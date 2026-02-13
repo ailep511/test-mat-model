@@ -1,0 +1,9 @@
+{
+  "id": "3.4.1",
+  "phase": "Phase 3: Efficient",
+  "capability": "Threat detection",
+  "recommendation": "Custom Threat Detection capabilities (SecLake / SIEM)",
+  "aws_service": "Amazon Security Lake",
+  "guidance": "",
+  "how_to_check": ""
+}

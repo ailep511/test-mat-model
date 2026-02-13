@@ -1,0 +1,9 @@
+{
+  "id": "4.9.2",
+  "phase": "Phase 4: Optimized",
+  "capability": "Incident response",
+  "recommendation": "Advanced Security Automations",
+  "aws_service": "N/A",
+  "guidance": "",
+  "how_to_check": ""
+}

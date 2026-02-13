@@ -1,0 +1,9 @@
+{
+  "id": "4.7.1",
+  "phase": "Phase 4: Optimized",
+  "capability": "Data protection",
+  "recommendation": "GenAI Data Protection",
+  "aws_service": "Amazon Bedrock",
+  "guidance": "",
+  "how_to_check": ""
+}

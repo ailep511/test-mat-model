@@ -1,0 +1,9 @@
+{
+  "id": "3.1.1",
+  "phase": "Phase 3: Efficient",
+  "capability": "Security governance",
+  "recommendation": "Design your secure architecture",
+  "aws_service": "N/A",
+  "guidance": "",
+  "how_to_check": ""
+}

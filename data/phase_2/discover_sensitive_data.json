@@ -1,0 +1,9 @@
+{
+  "id": "2.7.3",
+  "phase": "Phase 2: Foundational",
+  "capability": "Data protection",
+  "recommendation": "Discover sensitive data",
+  "aws_service": "Amazon Macie",
+  "guidance": "",
+  "how_to_check": ""
+}

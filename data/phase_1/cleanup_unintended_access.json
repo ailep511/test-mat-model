@@ -1,0 +1,9 @@
+{
+  "id": "1.3.4",
+  "phase": "Phase 1: Quick Wins",
+  "capability": "Identity & access management",
+  "recommendation": "Cleanup unintended access",
+  "aws_service": "IAM Access Analyzer",
+  "guidance": "",
+  "how_to_check": ""
+}

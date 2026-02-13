@@ -1,0 +1,9 @@
+{
+  "id": "3.7.1",
+  "phase": "Phase 3: Efficient",
+  "capability": "Data protection",
+  "recommendation": "Encryption in transit",
+  "aws_service": "AWS Certificate Manager",
+  "guidance": "",
+  "how_to_check": ""
+}

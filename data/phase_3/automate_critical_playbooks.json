@@ -1,0 +1,9 @@
+{
+  "id": "3.9.2",
+  "phase": "Phase 3: Efficient",
+  "capability": "Incident response",
+  "recommendation": "Automate Critical Playbooks",
+  "aws_service": "N/A",
+  "guidance": "",
+  "how_to_check": ""
+}

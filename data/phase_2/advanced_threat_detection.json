@@ -1,0 +1,9 @@
+{
+  "id": "2.4.1",
+  "phase": "Phase 2: Foundational",
+  "capability": "Threat detection",
+  "recommendation": "Advanced Threat Detection",
+  "aws_service": "GD Protection Plans",
+  "guidance": "",
+  "how_to_check": ""
+}

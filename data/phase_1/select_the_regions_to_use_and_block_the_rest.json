@@ -1,0 +1,9 @@
+{
+  "id": "1.1.2",
+  "phase": "Phase 1: Quick Wins",
+  "capability": "Security governance",
+  "recommendation": "Select the region(s) to use and block the rest",
+  "aws_service": "AWS Organizations - AWS Control Tower",
+  "guidance": "",
+  "how_to_check": ""
+}

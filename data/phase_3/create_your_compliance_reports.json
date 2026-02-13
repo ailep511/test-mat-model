@@ -1,0 +1,9 @@
+{
+  "id": "3.2.1",
+  "phase": "Phase 3: Efficient",
+  "capability": "Security assurance",
+  "recommendation": "Create your compliance reports",
+  "aws_service": "AWS Audit Manager",
+  "guidance": "",
+  "how_to_check": ""
+}

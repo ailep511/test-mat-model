@@ -1,0 +1,9 @@
+{
+  "id": "4.3.3",
+  "phase": "Phase 4: Optimized",
+  "capability": "Identity & access management",
+  "recommendation": "Temporary elevated access",
+  "aws_service": "N/A",
+  "guidance": "",
+  "how_to_check": ""
+}

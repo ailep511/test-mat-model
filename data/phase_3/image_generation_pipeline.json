@@ -1,0 +1,9 @@
+{
+  "id": "3.6.1",
+  "phase": "Phase 3: Efficient",
+  "capability": "Infrastructure protection",
+  "recommendation": "Image Generation Pipeline",
+  "aws_service": "EC2 Image Builder",
+  "guidance": "",
+  "how_to_check": ""
+}

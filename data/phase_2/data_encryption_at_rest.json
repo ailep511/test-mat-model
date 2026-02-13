@@ -1,0 +1,9 @@
+{
+  "id": "2.7.1",
+  "phase": "Phase 2: Foundational",
+  "capability": "Data protection",
+  "recommendation": "Data Encryption at rest",
+  "aws_service": "AWS KMS",
+  "guidance": "",
+  "how_to_check": ""
+}

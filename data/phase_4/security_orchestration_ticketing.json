@@ -1,0 +1,9 @@
+{
+  "id": "4.9.3",
+  "phase": "Phase 4: Optimized",
+  "capability": "Incident response",
+  "recommendation": "Security Orchestration & Ticketing",
+  "aws_service": "N/A",
+  "guidance": "",
+  "how_to_check": ""
+}

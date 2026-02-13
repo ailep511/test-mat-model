@@ -1,0 +1,9 @@
+{
+  "id": "3.8.1",
+  "phase": "Phase 3: Efficient",
+  "capability": "Application security",
+  "recommendation": "Perform threat modeling",
+  "aws_service": "N/A",
+  "guidance": "",
+  "how_to_check": ""
+}

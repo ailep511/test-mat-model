@@ -1,0 +1,9 @@
+{
+  "id": "1.4.1",
+  "phase": "Phase 1: Quick Wins",
+  "capability": "Threat detection",
+  "recommendation": "Detect Common Threats",
+  "aws_service": "Amazon GuardDuty",
+  "guidance": "",
+  "how_to_check": ""
+}

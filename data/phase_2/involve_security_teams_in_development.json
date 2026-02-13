@@ -1,0 +1,9 @@
+{
+  "id": "2.8.1",
+  "phase": "Phase 2: Foundational",
+  "capability": "Application security",
+  "recommendation": "Involve security teams in development",
+  "aws_service": "N/A",
+  "guidance": "",
+  "how_to_check": ""
+}

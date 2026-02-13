@@ -1,0 +1,9 @@
+{
+  "id": "4.9.4",
+  "phase": "Phase 4: Optimized",
+  "capability": "Incident response",
+  "recommendation": "Automate deviation correction in configurations",
+  "aws_service": "AWS Config",
+  "guidance": "",
+  "how_to_check": ""
+}

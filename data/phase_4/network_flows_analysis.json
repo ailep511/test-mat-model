@@ -1,0 +1,9 @@
+{
+  "id": "4.4.2",
+  "phase": "Phase 4: Optimized",
+  "capability": "Threat detection",
+  "recommendation": "Network Flows analysis",
+  "aws_service": "VPC Flow Logs",
+  "guidance": "",
+  "how_to_check": ""
+}

@@ -1,0 +1,9 @@
+{
+  "id": "1.1.1",
+  "phase": "Phase 1: Quick Wins",
+  "capability": "Security governance",
+  "recommendation": "Assign Security contacts",
+  "aws_service": "N/A",
+  "guidance": "- Are security contacts defined for all accounts in your organization ?\n- Is the information is current and correct ? (i.e.: not pointing to an ex-employee contact information)\n- Are you using a distribution list as the email address to ensure it’s getting to more than one person ?",
+  "how_to_check": "[Account.1] Security contact information should be provided for an AWS account"
+}

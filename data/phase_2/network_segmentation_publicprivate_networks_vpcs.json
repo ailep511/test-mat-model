@@ -1,0 +1,9 @@
+{
+  "id": "2.6.3",
+  "phase": "Phase 2: Foundational",
+  "capability": "Infrastructure protection",
+  "recommendation": "Network segmentation - Public/Private Networks (VPCs)",
+  "aws_service": "Amazon VPC",
+  "guidance": "",
+  "how_to_check": ""
+}

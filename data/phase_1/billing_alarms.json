@@ -1,0 +1,9 @@
+{
+  "id": "1.4.4",
+  "phase": "Phase 1: Quick Wins",
+  "capability": "Threat detection",
+  "recommendation": "Billing alarms",
+  "aws_service": "Amazon SNS",
+  "guidance": "",
+  "how_to_check": ""
+}

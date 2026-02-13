@@ -1,0 +1,9 @@
+{
+  "id": "1.8.1",
+  "phase": "Phase 1: Quick Wins",
+  "capability": "Application security",
+  "recommendation": "WAF with managed rules",
+  "aws_service": "AWS WAF",
+  "guidance": "- Is a WAF protecting all your applications ? which one ? how is it deployed ?\n- Have you deployed AWS WAF consistently across all applications in the organization ?\n- Are you using AWS Firewall Manager to ensure a default WebACL is defined for all Cloudfront distributions?\n- Are the rules configured in Block? (or only count?)\n- Which managed rules are active ?",
+  "how_to_check": "[WAF.10] AWS WAF web ACLs should have at least one rule or rule group"
+}

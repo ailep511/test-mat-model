@@ -1,0 +1,9 @@
+{
+  "id": "3.10.1",
+  "phase": "Phase 3: Efficient",
+  "capability": "Resiliency",
+  "recommendation": "Disaster Recovery Plan",
+  "aws_service": "N/A",
+  "guidance": "",
+  "how_to_check": ""
+}

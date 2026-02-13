@@ -1,0 +1,9 @@
+{
+  "id": "2.5.1",
+  "phase": "Phase 2: Foundational",
+  "capability": "Vulnerability management",
+  "recommendation": "Manage infrastructure vulnerabilities",
+  "aws_service": "Amazon Inspector",
+  "guidance": "",
+  "how_to_check": ""
+}

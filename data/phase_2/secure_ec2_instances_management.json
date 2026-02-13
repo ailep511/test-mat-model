@@ -1,0 +1,9 @@
+{
+  "id": "2.6.2",
+  "phase": "Phase 2: Foundational",
+  "capability": "Infrastructure protection",
+  "recommendation": "Secure EC2 Instances Management",
+  "aws_service": "Fleet Manager",
+  "guidance": "",
+  "how_to_check": ""
+}

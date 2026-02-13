@@ -1,0 +1,9 @@
+{
+  "id": "1.7.1",
+  "phase": "Phase 1: Quick Wins",
+  "capability": "Data protection",
+  "recommendation": "Block Public Access",
+  "aws_service": "S3 / EC2",
+  "guidance": "Do you have Amazon S3 Block Public Access enabled at account level in all the accounts in your organization ?\nAre there any public buckets that you do not have identified that they absolutely need to be public?\nHave you enabled SCPs to prevent the removal of the BPA ?",
+  "how_to_check": "- [S3.1] S3 general purpose buckets should have block public access settings enabled (account-level)\n- [S3.2] S3 general purpose buckets should block public read access(bucket-level)"
+}

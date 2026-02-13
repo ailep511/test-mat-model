@@ -1,0 +1,9 @@
+{
+  "id": "4.10.1",
+  "phase": "Phase 4: Optimized",
+  "capability": "Resiliency",
+  "recommendation": "Multi-region disaster recovery automation",
+  "aws_service": "AWS Elastic DR",
+  "guidance": "",
+  "how_to_check": ""
+}

@@ -1,0 +1,9 @@
+{
+  "id": "2.6.4",
+  "phase": "Phase 2: Foundational",
+  "capability": "Infrastructure protection",
+  "recommendation": "Multi-account management",
+  "aws_service": "AWS Control Tower",
+  "guidance": "",
+  "how_to_check": ""
+}

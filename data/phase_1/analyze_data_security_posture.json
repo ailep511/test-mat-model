@@ -1,0 +1,9 @@
+{
+  "id": "1.7.2",
+  "phase": "Phase 1: Quick Wins",
+  "capability": "Data protection",
+  "recommendation": "Analyze data security posture",
+  "aws_service": "Amazon Macie",
+  "guidance": "",
+  "how_to_check": ""
+}

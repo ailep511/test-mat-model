@@ -1,0 +1,9 @@
+{
+  "id": "1.10.1",
+  "phase": "Phase 1: Quick Wins",
+  "capability": "Resiliency",
+  "recommendation": "Evaluate Resiliency",
+  "aws_service": "AWS Resilience Hub",
+  "guidance": "",
+  "how_to_check": ""
+}

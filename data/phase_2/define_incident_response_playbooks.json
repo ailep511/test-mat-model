@@ -1,0 +1,9 @@
+{
+  "id": "2.9.1",
+  "phase": "Phase 2: Foundational",
+  "capability": "Incident response",
+  "recommendation": "Define incident response playbooks",
+  "aws_service": "N/A",
+  "guidance": "",
+  "how_to_check": ""
+}

@@ -1,0 +1,9 @@
+{
+  "id": "3.6.3",
+  "phase": "Phase 3: Efficient",
+  "capability": "Infrastructure protection",
+  "recommendation": "Outbound Traffic Control",
+  "aws_service": "AWS Network Firewall",
+  "guidance": "",
+  "how_to_check": ""
+}

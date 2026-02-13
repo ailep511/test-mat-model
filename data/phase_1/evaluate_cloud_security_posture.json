@@ -1,0 +1,9 @@
+{
+  "id": "1.2.1",
+  "phase": "Phase 1: Quick Wins",
+  "capability": "Security assurance",
+  "recommendation": "Evaluate Cloud Security Posture",
+  "aws_service": "AWS Security Hub",
+  "guidance": "",
+  "how_to_check": ""
+}

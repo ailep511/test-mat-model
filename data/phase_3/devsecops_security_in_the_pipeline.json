@@ -1,0 +1,9 @@
+{
+  "id": "3.5.2",
+  "phase": "Phase 3: Efficient",
+  "capability": "Vulnerability management",
+  "recommendation": "DevSecOps: Security in the Pipeline",
+  "aws_service": "N/A",
+  "guidance": "",
+  "how_to_check": ""
+}

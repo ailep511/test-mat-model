@@ -1,0 +1,9 @@
+{
+  "id": "1.6.1",
+  "phase": "Phase 1: Quick Wins",
+  "capability": "Infrastructure protection",
+  "recommendation": "Cleanup risky admin open ports",
+  "aws_service": "EC2 Security Groups",
+  "guidance": "- Are you allowing unrestricted ingress access to administration ports (22/3389) ?\n- How are you managing the administrative network access to your instances ?",
+  "how_to_check": "- [EC2.13] Security groups should not allow ingress from 0.0.0.0/0 or ::/0 to port 22\n- [EC2.14] Security groups should not allow ingress from 0.0.0.0/0 or ::/0 to port 3389"
+}

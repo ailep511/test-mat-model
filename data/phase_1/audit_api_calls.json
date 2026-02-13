@@ -1,0 +1,9 @@
+{
+  "id": "1.4.2",
+  "phase": "Phase 1: Quick Wins",
+  "capability": "Threat detection",
+  "recommendation": "Audit API calls",
+  "aws_service": "AWS CloudTrail",
+  "guidance": "",
+  "how_to_check": ""
+}
