@@ -203,7 +203,8 @@ function renderCards() {
 
       // Restore select value
       if (currentScore !== undefined) {
-        const sel = card.querySelector(`#sel-${item.id}`);
+        // Use getElementById because querySelector('#sel-...') fails when id contains dots
+        const sel = card.querySelector('#' + CSS.escape('sel-' + item.id));
         if (sel) sel.value = currentScore === 'na' ? 'na' : (currentScore ?? '');
       }
 
