@@ -4,6 +4,6 @@
   "capability": "Resiliency",
   "recommendation": "Evaluate Resiliency",
   "aws_service": "AWS Resilience Hub",
-  "guidance": "",
-  "how_to_check": ""
+  "guidance": "- Have you onboarded your critical applications into AWS Resilience Hub and defined their target RTO and RPO objectives ?\n- Has AWS Resilience Hub assessed your applications and identified resiliency gaps against your defined policies (e.g.: missing cross-AZ redundancy, insufficient backup coverage) ?\n- Are the recommendations produced by AWS Resilience Hub being reviewed and tracked to resolution, rather than left as unaddressed findings ?",
+  "how_to_check": "[ResilienceHub.1] Verify in the AWS Resilience Hub console that critical applications have been added, an assessment has been run, and that the resiliency score and policy breach status are being actively reviewed | Confirm that an alarm or notification is configured to alert when an application's resiliency score drops below the defined policy threshold"
 }
