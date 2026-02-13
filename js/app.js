@@ -189,7 +189,7 @@ function renderCards() {
               ${optionsHtml}
             </select>
           </div>
-          ${hasGuidance ? `<button class="rec-expand-btn" id="btn-${item.id}" onclick="toggleDetail('${item.id}')">▾</button>` : ''}
+          ${hasGuidance ? `<button class="rec-expand-btn" id="btn-${item.id}" onclick="toggleDetail('${item.id}')"></button>` : ''}
         </div>
         <div class="rec-detail" id="detail-${item.id}">
           <div class="rec-detail-inner">
