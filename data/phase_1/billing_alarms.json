@@ -4,6 +4,6 @@
   "capability": "Threat detection",
   "recommendation": "Billing alarms",
   "aws_service": "Amazon SNS",
-  "guidance": "",
-  "how_to_check": ""
+  "guidance": "- Do you have a billing alarm configured in Amazon CloudWatch to alert when estimated charges exceed a defined threshold ?\n- Are billing alerts enabled in the AWS Billing console and is the SNS topic delivering notifications to an actively monitored distribution list ?\n- Do you have multiple alarms at incremental thresholds (e.g.: 50%, 80%, 100% of expected spend) to detect anomalous activity before it becomes a significant financial impact ?",
+  "how_to_check": "[CloudWatch.15] CloudWatch alarms should have specified actions configured | Verify in the AWS Billing console that billing alerts are enabled, and confirm in CloudWatch that at least one billing alarm exists with an SNS action targeting an active subscription"
 }
