@@ -561,7 +561,7 @@ h1 span { color: var(--aws); }
   font-size: 12px;
 }
 .rec-select:hover { border-color: var(--border-bright); }
-.rec-select:focus { border-color: var(--aws); }
+.rec-select:focus { border-color: var(--border-bright); }
 
 .rec-select-wrapper::after {
   content: '';
@@ -570,8 +570,8 @@ h1 span { color: var(--aws); }
   top: 50%;
   width: 6px;
   height: 6px;
-  border-right: 2px solid var(--aws);
-  border-bottom: 2px solid var(--aws);
+  border-right: 2px solid var(--border-bright);
+  border-bottom: 2px solid var(--border-bright);
   transform: translateY(-65%) rotate(45deg);
   pointer-events: none;
   opacity: 0.7;
