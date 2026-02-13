@@ -448,7 +448,7 @@ h1 span { color: var(--aws); }
 }
 .cap-group-phase-badge {
   font-family: 'Roboto Mono', monospace;
-  font-size: 9px;
+  font-size: 10px;
   padding: 2px 7px;
   border-radius: 10px;
   letter-spacing: 0.06em;
@@ -581,14 +581,14 @@ h1 span { color: var(--aws); }
 .rec-detail-block { background: var(--bg-panel); border-radius: 6px; padding: 10px 12px; }
 .detail-label {
   font-family: 'Roboto Mono', monospace;
-  font-size: 9px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--aws);
-  margin-bottom: 6px;
+  margin-bottom: 9px;
 }
 .detail-text {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-secondary);
   line-height: 1.6;
   white-space: pre-wrap;
@@ -1050,7 +1050,7 @@ svg.radar text { font-family: 'Roboto Mono', monospace; }
 }
 .print-opt-heading {
   font-family: 'Roboto Mono', monospace;
-  font-size: 9px;
+  font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--text-dim);
@@ -1141,7 +1141,7 @@ svg.radar text { font-family: 'Roboto Mono', monospace; }
 
 .print-sel-all {
   font-family: 'Roboto Mono', monospace;
-  font-size: 9px;
+  font-size: 10px;
   color: var(--aws);
   cursor: pointer;
   margin-bottom: 8px;
@@ -1237,7 +1237,7 @@ svg.radar text { font-family: 'Roboto Mono', monospace; }
   margin-bottom: 3px;
 }
 .print-summary-box .psb-label {
-  font-size: 9px;
+  font-size: 10px;
   color: #888;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -1255,7 +1255,7 @@ svg.radar text { font-family: 'Roboto Mono', monospace; }
   gap: 8px;
 }
 .print-phase-heading .ph-badge {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   padding: 2px 8px;
   border-radius: 10px;
@@ -1285,7 +1285,7 @@ svg.radar text { font-family: 'Roboto Mono', monospace; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-size: 9px;
+  font-size: 10px;
   padding: 5px 8px;
   border: 1px solid #e0e4ea;
   text-align: left;
@@ -1302,7 +1302,7 @@ svg.radar text { font-family: 'Roboto Mono', monospace; }
   display: inline-block;
   padding: 1px 7px;
   border-radius: 10px;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -1340,7 +1340,7 @@ svg.radar text { font-family: 'Roboto Mono', monospace; }
 }
 .print-card-title { font-weight: 600; font-size: 11px; color: #1a1a2e; flex: 1; }
 .print-card-service {
-  font-size: 9px;
+  font-size: 10px;
   color: #4da6ff;
   background: #f0f6ff;
   padding: 1px 6px;
