@@ -4,6 +4,6 @@
   "capability": "Identity & access management",
   "recommendation": "Multi-Factor Authentication",
   "aws_service": "IAM / IAM Identity Center",
-  "guidance": "",
-  "how_to_check": ""
+  "guidance": "- Is MFA enforced for the AWS account root user, and has the root user MFA device been registered using a hardware token or a secure authenticator app ?\n- Is MFA required for all IAM users with console access, particularly those with administrative or privileged permissions ?\n- If using IAM Identity Center (SSO), is MFA enforced at the identity source level and configured to require re-authentication for sensitive operations ?",
+  "how_to_check": "[IAM.6] Hardware MFA should be enabled for the root user | [IAM.19] MFA should be enabled for all IAM users | Verify in the IAM console that no users with console access have MFA disabled, and if using IAM Identity Center, confirm that MFA enforcement is set to Required in the Settings > Authentication panel"
 }
