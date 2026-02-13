@@ -356,6 +356,7 @@ h1 span { color: var(--aws); }
 .phase-pill.active-p0 { border-color: var(--r1); color: var(--r1); background: rgba(255,153,0,0.08); }
 .phase-pill.active-p1 { border-color: var(--r2); color: var(--r2); background: rgba(62,207,142,0.08); }
 .phase-pill.active-p2 { border-color: var(--r3); color: var(--r3); background: rgba(77,166,255,0.08); }
+.phase-pill.active-p3 { border-color: var(--r4); color: var(--r4); background: rgba(180,122,255,0.08); }
 .phase-pill.active-unassessed { border-color: var(--text-secondary); color: var(--text-secondary); background: rgba(122,156,196,0.08); }
 
 /* MAIN CONTENT */
