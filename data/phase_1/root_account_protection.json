@@ -4,6 +4,6 @@
   "capability": "Identity & access management",
   "recommendation": "Root Account Protection",
   "aws_service": "N/A",
-  "guidance": "",
-  "how_to_check": ""
+  "guidance": "- Is the root user protected with MFA, ideally using a hardware security key, and are the root credentials stored securely (e.g.: in a vault with restricted access) ?\n- Are root user access keys absent for all accounts in your organization, ensuring that programmatic root access is not possible ?\n- Is root user activity monitored via a CloudWatch alarm and SNS notification triggered by any root account login or API call ?",
+  "how_to_check": "[IAM.4] IAM root user access key should not exist | [IAM.6] Hardware MFA should be enabled for the root user | [CloudWatch.1] A log metric filter and alarm should exist for root account usage | Verify in the IAM console that no root access keys exist, that MFA is active on the root user, and that a CloudTrail-based metric filter is alerting on any root activity"
 }
