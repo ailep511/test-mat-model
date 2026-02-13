@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
 <!-- LOADING SCREEN -->
 <div id="loadingScreen" style="
   position:fixed;inset:0;z-index:9999;
@@ -24,6 +25,7 @@
   <div style="color:#7a9cc4;font-size:13px;letter-spacing:0.05em">Loading assessment data...</div>
   <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
 </div>
+
 <header>
   <div class="header-brand">
     <div class="brand-icon">
@@ -46,6 +48,7 @@
     </button>
   </div>
 </header>
+
 <div class="hero">
   <div class="hero-content">
     <div class="hero-eyebrow">Security Self-Assessment Tool</div>
@@ -53,47 +56,49 @@
     <p class="hero-sub">This tool allows you to perform security self-assessments or security journeys, with guidance from <strong style="color:var(--text-primary)">AWS Solutions Architects</strong>. Evaluate your security posture across 10 capability areas and 4 maturity phases.</p>
   </div>
 </div>
+
 <div class="phase-stats" id="phaseStats">
   <div class="phase-stat active" data-phase="0" onclick="filterPhase(0)">
-    <div class="stat-label p0-color">Phase 1</div>
-    <div class="stat-name p0-color">Quick Wins</div>
-    <div class="stat-bar-track"><div class="stat-bar-fill p0-fill" id="bar-p0" style="width:0%"></div></div>
-    <div class="stat-pct p0-color" id="pct-p0">0%</div>
+    <div class="stat-label">Phase 1</div>
+    <div class="stat-name">Quick Wins</div>
+    <div class="stat-bar-track"><div class="stat-bar-fill" id="bar-p0" style="width:0%"></div></div>
+    <div class="stat-pct" id="pct-p0">0%</div>
     <div class="stat-count" id="cnt-p0">16 items</div>
   </div>
   <div class="phase-stat" data-phase="1" onclick="filterPhase(1)">
-    <div class="stat-label p1-color">Phase 2</div>
-    <div class="stat-name p1-color">Foundational</div>
-    <div class="stat-bar-track"><div class="stat-bar-fill p1-fill" id="bar-p1" style="width:0%"></div></div>
-    <div class="stat-pct p1-color" id="pct-p1">0%</div>
+    <div class="stat-label">Phase 2</div>
+    <div class="stat-name">Foundational</div>
+    <div class="stat-bar-track"><div class="stat-bar-fill" id="bar-p1" style="width:0%"></div></div>
+    <div class="stat-pct" id="pct-p1">0%</div>
     <div class="stat-count" id="cnt-p1">20 items</div>
   </div>
   <div class="phase-stat" data-phase="2" onclick="filterPhase(2)">
-    <div class="stat-label p2-color">Phase 3</div>
-    <div class="stat-name p2-color">Efficient</div>
-    <div class="stat-bar-track"><div class="stat-bar-fill p2-fill" id="bar-p2" style="width:0%"></div></div>
-    <div class="stat-pct p2-color" id="pct-p2">0%</div>
+    <div class="stat-label">Phase 3</div>
+    <div class="stat-name">Efficient</div>
+    <div class="stat-bar-track"><div class="stat-bar-fill" id="bar-p2" style="width:0%"></div></div>
+    <div class="stat-pct" id="pct-p2">0%</div>
     <div class="stat-count" id="cnt-p2">20 items</div>
   </div>
   <div class="phase-stat" data-phase="3" onclick="filterPhase(3)">
-    <div class="stat-label p3-color">Phase 4</div>
-    <div class="stat-name p3-color">Optimized</div>
-    <div class="stat-bar-track"><div class="stat-bar-fill p3-fill" id="bar-p3" style="width:0%"></div></div>
-    <div class="stat-pct p3-color" id="pct-p3">0%</div>
+    <div class="stat-label">Phase 4</div>
+    <div class="stat-name">Optimized</div>
+    <div class="stat-bar-track"><div class="stat-bar-fill" id="bar-p3" style="width:0%"></div></div>
+    <div class="stat-pct" id="pct-p3">0%</div>
     <div class="stat-count" id="cnt-p3">18 items</div>
   </div>
 </div>
+
 <div class="layout">
   <!-- SIDEBAR -->
   <div class="sidebar">
     <div class="sidebar-section">
       <div class="sidebar-heading">Filter by Phase</div>
       <div class="phase-pills">
-        <div class="phase-pill active" data-p="all" onclick="filterByPhase('all', this)">All</div>
-        <div class="phase-pill p0-color" data-p="0" onclick="filterByPhase('0', this)">Phase 1</div>
-        <div class="phase-pill p1-color" data-p="1" onclick="filterByPhase('1', this)">Phase 2</div>
-        <div class="phase-pill p2-color" data-p="2" onclick="filterByPhase('2', this)">Phase 3</div>
-        <div class="phase-pill p3-color" data-p="3" onclick="filterByPhase('3', this)">Phase 4</div>
+        <div class="phase-pill active-p0" data-p="all" onclick="filterByPhase('all', this)">All</div>
+        <div class="phase-pill" data-p="0" onclick="filterByPhase('0', this)">Phase 1</div>
+        <div class="phase-pill" data-p="1" onclick="filterByPhase('1', this)">Phase 2</div>
+        <div class="phase-pill" data-p="2" onclick="filterByPhase('2', this)">Phase 3</div>
+        <div class="phase-pill" data-p="3" onclick="filterByPhase('3', this)">Phase 4</div>
         <div class="phase-pill" data-p="unassessed" onclick="filterByPhase('unassessed', this)">Not assessed</div>
       </div>
     </div>
@@ -102,6 +107,7 @@
       <div id="capNav"></div>
     </div>
   </div>
+
   <!-- MAIN CONTENT -->
   <div class="main-content" id="mainContent">
     <div class="content-toolbar">
@@ -117,6 +123,7 @@
     <div class="cards-container" id="cardsContainer"></div>
     <div class="no-results" id="noResults">No items match your filters.</div>
   </div>
+
   <!-- RIGHT PANEL -->
   <div class="right-panel">
     <div class="panel-section">
@@ -134,6 +141,7 @@
         <div class="score-ring-label" id="scoreLabel">No assessments yet</div>
       </div>
     </div>
+
     <div class="panel-section">
       <div class="panel-title">Phase Progress</div>
       <div class="progress-overview">
@@ -159,10 +167,12 @@
         </div>
       </div>
     </div>
+
     <div class="panel-section">
       <div class="panel-title">By Capability</div>
       <div id="capScoresList"></div>
     </div>
+
     <div class="panel-section">
       <div class="panel-title">Radar Chart</div>
       <div class="radar-wrap">
@@ -171,10 +181,13 @@
     </div>
   </div>
 </div>
+
 <div id="printArea"></div>
+
 <!-- PRINT PREVIEW MODAL -->
 <div id="printModal">
   <div class="print-modal-inner">
+
     <div class="print-modal-header">
       <div class="print-modal-title">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="5.5" width="12" height="8" rx="1.5" stroke="#FF9900" stroke-width="1.4" fill="none"/><path d="M5.5 5.5V3.5a1 1 0 011-1h5a1 1 0 011 1v2" stroke="#FF9900" stroke-width="1.4"/><rect x="6" y="9.5" width="6" height="2.5" rx=".5" fill="#FF9900"/><circle cx="4.5" cy="8" r=".8" fill="#FF9900"/></svg>
@@ -183,9 +196,12 @@
       </div>
       <button class="print-modal-close" onclick="closePrintModal()">✕</button>
     </div>
+
     <div class="print-modal-body">
+
       <!-- LEFT: OPTIONS -->
       <div class="print-options-panel">
+
         <div class="print-opt-section">
           <div class="print-opt-heading">Color Mode</div>
           <label class="print-radio-row">
@@ -197,6 +213,7 @@
             <span class="print-radio-label">⬛ Black &amp; white</span>
           </label>
         </div>
+
         <div class="print-opt-section">
           <div class="print-opt-heading">Output Format</div>
           <label class="print-radio-row">
@@ -208,6 +225,7 @@
             <span class="print-radio-label">Detailed cards</span>
           </label>
         </div>
+
         <div class="print-opt-section">
           <div class="print-opt-heading">Items to Include</div>
           <label class="print-radio-row">
@@ -223,6 +241,7 @@
             <span class="print-radio-label">Unscored items only</span>
           </label>
         </div>
+
         <div class="print-opt-section">
           <div class="print-opt-heading">Phases
             <span class="print-sel-all" style="float:right;margin-left:8px" onclick="toggleAllPhases(true)">All</span>
@@ -233,6 +252,7 @@
           <label class="print-checkbox-row"><input type="checkbox" class="phase-chk" name="phase-chk-2" value="2" checked onchange="refreshPreview()"><span class="print-checkbox-label">Phase 3 · Efficient</span></label>
           <label class="print-checkbox-row"><input type="checkbox" class="phase-chk" name="phase-chk-3" value="3" checked onchange="refreshPreview()"><span class="print-checkbox-label">Phase 4 · Optimized</span></label>
         </div>
+
         <div class="print-opt-section">
           <div class="print-opt-heading">Capabilities
             <span class="print-sel-all" style="float:right;margin-left:8px" onclick="toggleAllCaps(true)">All</span>
@@ -240,6 +260,7 @@
           </div>
           <div id="capCheckboxes"></div>
         </div>
+
         <div class="print-opt-section">
           <div class="print-opt-heading">Include in Output</div>
           <div class="print-toggle-row">
@@ -263,7 +284,9 @@
             <label class="toggle-switch"><input type="checkbox" id="tog-summary" checked onchange="refreshPreview()"><span class="toggle-slider"></span></label>
           </div>
         </div>
+
       </div>
+
       <!-- RIGHT: PREVIEW -->
       <div class="print-preview-panel">
         <div class="print-preview-toolbar">
@@ -277,7 +300,9 @@
           <div id="previewDoc" class="print-doc"></div>
         </div>
       </div>
+
     </div>
+
     <div class="print-modal-footer">
       <span class="print-footer-info">Output will be sent to your <span>system print dialog</span></span>
       <div class="print-modal-actions">
@@ -288,8 +313,10 @@
         </button>
       </div>
     </div>
+
   </div>
 </div>
+
 <div id="confirmModal">
   <div class="modal-box">
     <div class="modal-icon">
@@ -312,13 +339,16 @@
     </div>
   </div>
 </div>
+
 <div id="savedToast">
   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5.5" stroke="#00d97e"/><path d="M3.5 6l2 2 3-3" stroke="#00d97e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   Session saved
 </div>
+
 <footer>
   Built from <span>AWS Security Maturity Model Assessment Tool v7</span> &nbsp;·&nbsp; Always download the latest version from <span>maturitymodel.security.aws.dev</span>
 </footer>
+
   <script src="js/app.js"></script>
 </body>
 </html>
