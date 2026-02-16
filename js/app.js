@@ -175,7 +175,7 @@ function renderCards() {
       const optionsHtml = SCORING_OPTIONS.map(o => `<option value="${o.value ?? ''}">${o.label}</option>`).join('');
       const currentScore = scores[item.id];
       const selectClass = getSelectClass(currentScore);
-      
+
       card.innerHTML = `
         <div class="rec-header" onclick="handleHeaderClick(event, '${item.id}')">
           <span class="rec-id">${item.id}</span>
@@ -192,7 +192,7 @@ function renderCards() {
           </div>
           ${hasGuidance ? `<button class="rec-expand-btn" id="btn-${item.id}"></button>` : ''}
         </div>
-        <div class="rec-detail" id="detail-${id}">
+        <div class="rec-detail" id="detail-${item.id}">
           <div class="rec-detail-inner">
             ${item.guidance ? `<div class="rec-detail-block"><div class="detail-label">Assessment Guidance</div><div class="detail-text">${item.guidance.trim()}</div></div>` : ''}
             ${item.how_to_check ? `<div class="rec-detail-block"><div class="detail-label">How to Check</div><div class="detail-text">${item.how_to_check.trim()}</div></div>` : ''}
@@ -200,7 +200,7 @@ function renderCards() {
           <textarea class="comments-input" id="cmt-${item.id}" placeholder="Add comments, owner, or notes..." oninput="setComment('${item.id}', this.value)">${comments[item.id]||''}</textarea>
         </div>
       `;
-
+      
       // Restore select value
       if (currentScore !== undefined) {
         // Use getElementById because querySelector('#sel-...') fails when id contains dots
@@ -245,11 +245,11 @@ function toggleDetail(id) {
   if (isOpen) {
     detail.classList.remove('open');
     if (btn) btn.classList.remove('open');
-    card.classList.remove('expanded');
+    if (card) card.classList.remove('expanded');
   } else {
     detail.classList.add('open');
     if (btn) btn.classList.add('open');
-    card.classList.add('expanded');
+    if (card) card.classList.add('expanded');
   }
 }
 
