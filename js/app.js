@@ -175,9 +175,9 @@ function renderCards() {
       const optionsHtml = SCORING_OPTIONS.map(o => `<option value="${o.value ?? ''}">${o.label}</option>`).join('');
       const currentScore = scores[item.id];
       const selectClass = getSelectClass(currentScore);
-
+      
       card.innerHTML = `
-        <div class="rec-header">
+        <div class="rec-header" onclick="handleHeaderClick(event, '${item.id}')">
           <span class="rec-id">${item.id}</span>
           <div class="rec-info">
             <div class="rec-title">${item.recommendation}</div>
@@ -185,14 +185,14 @@ function renderCards() {
               ${item.aws_service && item.aws_service !== 'N/A' ? `<span class="rec-service">⚙ ${item.aws_service}</span>` : ''}
             </div>
           </div>
-          <div class="rec-select-wrapper">
+          <div class="rec-select-wrapper" onclick="event.stopPropagation()">
             <select class="rec-select ${selectClass}" id="sel-${item.id}" onchange="setScore('${item.id}', this)">
               ${optionsHtml}
             </select>
           </div>
-          ${hasGuidance ? `<button class="rec-expand-btn" id="btn-${item.id}" onclick="toggleDetail('${item.id}')"></button>` : ''}
+          ${hasGuidance ? `<button class="rec-expand-btn" id="btn-${item.id}"></button>` : ''}
         </div>
-        <div class="rec-detail" id="detail-${item.id}">
+        <div class="rec-detail" id="detail-${id}">
           <div class="rec-detail-inner">
             ${item.guidance ? `<div class="rec-detail-block"><div class="detail-label">Assessment Guidance</div><div class="detail-text">${item.guidance.trim()}</div></div>` : ''}
             ${item.how_to_check ? `<div class="rec-detail-block"><div class="detail-label">How to Check</div><div class="detail-text">${item.how_to_check.trim()}</div></div>` : ''}
@@ -238,8 +238,27 @@ function getSelectClass(val) {
 function toggleDetail(id) {
   const detail = document.getElementById(`detail-${id}`);
   const btn = document.getElementById(`btn-${id}`);
-  detail.classList.toggle('open');
-  btn.classList.toggle('open');
+  const card = document.getElementById(`card-${id}`);
+  
+  const isOpen = detail.classList.contains('open');
+  
+  if (isOpen) {
+    detail.classList.remove('open');
+    if (btn) btn.classList.remove('open');
+    card.classList.remove('expanded');
+  } else {
+    detail.classList.add('open');
+    if (btn) btn.classList.add('open');
+    card.classList.add('expanded');
+  }
+}
+
+function handleHeaderClick(e, id) {
+  // Evitar toggle si se hizo clic en el select o sus elementos
+  if (e.target.closest('.rec-select-wrapper') || e.target.closest('.rec-select')) {
+    return;
+  }
+  toggleDetail(id);
 }
 
 function setScore(id, sel) {
